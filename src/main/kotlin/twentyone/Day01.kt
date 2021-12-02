@@ -9,7 +9,7 @@ class Day01() {
     }
 
     private fun secondPart() {
-        val inputs = readFileAsLinesUsingUseLines("/home/cml/Dropbox/docMy/workspace/AdventOfCode/src/main/resources/2021day012.txt")
+        val inputs = readFileAsLinesUsingUseLines("/home/cml/Dropbox/docMy/workspace/AdventOfCode/src/main/resources/2021/day01a.txt")
         val ints = inputs.map { it.toInt() }
         val values = mutableListOf<Int>()
 
@@ -37,7 +37,7 @@ class Day01() {
     }
 
     private fun firstPart() {
-        val inputs = readFileAsLinesUsingUseLines("/home/cml/Dropbox/docMy/workspace/AdventOfCode/src/main/resources/2021day01.txt")
+        val inputs = readFileAsLinesUsingUseLines("/home/cml/Dropbox/docMy/workspace/AdventOfCode/src/main/resources/2021/day01.txt")
         val ints = inputs.map { it.toInt() }
         var countIncrease = 0
         var lastValue: Int? = null
