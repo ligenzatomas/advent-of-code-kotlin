@@ -1,5 +1,5 @@
-import twentyone.Day04
+import twentyone.Day05
 
 fun main(args: Array<String>) {
-    var day = Day04()
+    var day = Day05()
 }
