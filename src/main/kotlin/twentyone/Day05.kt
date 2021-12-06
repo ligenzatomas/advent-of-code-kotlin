@@ -8,9 +8,10 @@ class Day05 {
 
     init {
         partOne()
+        partTwo()
     }
 
-    fun partOne() {
+    fun partTwo() {
         val inputs = Utils().parseLines("05").toList()
 
         val lines = inputs.map { parseLine(it) }
@@ -80,6 +81,63 @@ class Day05 {
                     y += deltaY
                     markArrayX(x, x, y, desk)
                 } while (x != it.x2 && y != it.y2)
+            }
+        }
+
+        var count = 0
+
+        desk.forEachIndexed { index, ints ->
+            ints?.forEach {
+                if (it >= 2) {
+                    count++
+                }
+            }
+        }
+
+        println(count)
+    }
+
+    fun partOne() {
+        val inputs = Utils().parseLines("05").toList()
+
+        val lines = inputs.map { parseLine(it) }
+        lines.forEach {
+            if ((it.maximumX()+1) > maxX) {
+                maxX = (it.maximumX()+1)
+            }
+
+            if ((it.maximumY()+1) > maxY) {
+                maxY = (it.maximumY()+1)
+            }
+        }
+
+        var desk = arrayOfNulls<IntArray>(maxY)
+        desk.forEachIndexed { index, ints ->
+            if (ints == null) {
+                val arr = IntArray(maxX)
+                arr.fill(0, 0, maxX)
+
+                desk[index] = arr
+            }
+        }
+
+        lines.forEach {
+            if (it.isLine()) {
+                if (it.x1 == it.x2) {
+                    if (it.y1 > it.y2) {
+                        markArrayY(it.y2, it.y1, it.x1, desk)
+                    } else {
+                        markArrayY(it.y1, it.y2, it.x1, desk)
+                    }
+                }
+
+                if (it.y1 == it.y2) {
+                    if (it.x1 > it.x2) {
+                        markArrayX(it.x2, it.x1, it.y1, desk)
+                    } else {
+                        markArrayX(it.x1, it.x2, it.y1, desk)
+                    }
+                }
             }
         }
 
