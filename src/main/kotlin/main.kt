@@ -4,5 +4,5 @@ import twentyone.Day08
 import twentyone.Day09
 
 fun main(args: Array<String>) {
-    var day = Day09()
+    var day = Day08()
 }
