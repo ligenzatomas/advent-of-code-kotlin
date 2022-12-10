@@ -1,5 +1,5 @@
 import twentytwo.*
 
 fun main(args: Array<String>) {
-    var day = Day08()
+    var day = Day09()
 }
